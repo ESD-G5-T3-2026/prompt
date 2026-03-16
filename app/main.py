@@ -227,7 +227,7 @@ def patch_prompt(prompt_id: str, payload: PromptPatch) -> PromptResponse:
 
 
 @app.delete('/api/v1/prompts/{prompt_id}', status_code=204)
-def delete_prompt(prompt_id: str) -> None:
+def delete_prompt(prompt_id: str):
     prompt_id = _trim_non_blank(prompt_id, 'prompt_id')
     try:
         response = client.delete(
